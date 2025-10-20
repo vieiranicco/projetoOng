@@ -1,0 +1,158 @@
+.navnav2 {
+  	width: 100%;
+  	height: 65px;
+  	position: relative;
+  	background-color: #0102b5;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+  	justify-content: center;
+  	padding: 16px 70px;
+  	box-sizing: border-box;
+  	text-align: left;
+  	font-size: 16px;
+  	color: #fff;
+  	font-family: Sora;
+}
+.frame-parent {
+  	width: 1295px;
+  	display: flex;
+  	align-items: center;
+  	justify-content: space-between;
+  	gap: 20px;
+}
+.group-parent {
+  	display: flex;
+  	align-items: center;
+  	gap: 42px;
+}
+.frame-child {
+  	height: 38.7px;
+  	width: 79px;
+  	position: relative;
+}
+.sobre {
+  	height: 21px;
+  	width: 50px;
+  	position: relative;
+  	line-height: 20px;
+  	font-weight: 600;
+  	display: inline-block;
+  	flex-shrink: 0;
+}
+.projetos {
+  	position: relative;
+  	line-height: 20px;
+  	font-weight: 600;
+}
+.button-parent {
+  	display: flex;
+  	align-items: flex-end;
+  	justify-content: flex-end;
+  	gap: 42px;
+  	font-size: 14px;
+}
+.button {
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+}
+.button2 {
+  	border-radius: 6px;
+  	background-color: #ff2600;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+  	padding: 8px 12px;
+}
+.elements {
+  	display: flex;
+  	align-items: center;
+}
+.social-person {
+  	height: 32px;
+  	width: 32px;
+  	position: relative;
+  	object-fit: contain;
+}
+
+.title_main {
+  	width: 100%;
+  	position: relative;
+  	font-size: 36px;
+  	line-height: 51px;
+  	font-weight: 600;
+  	font-family: Sora;
+  	color: #000;
+  	text-align: center;
+  	display: inline-block;
+}
+
+.text_main {
+  	width: 100%;
+  	position: relative;
+  	font-size: 20px;
+  	line-height: 30px;
+  	font-family: Sora;
+  	color: #000;
+  	text-align: center;
+  	display: inline-block;
+}
+
+#hero {
+    background-image: url('images/image_main.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 100px 20px;
+}
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap: 56px;
+    line-height: 28px;
+    font-weight: 600;
+    
+
+}
+
+.button-primary {
+    position: relative;
+    border-radius: 8px;
+    border: 2px solid #ff2600;
+    box-sizing: border-box;
+    width: 165px;
+    height: 56px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 14px 18px;
+    text-align: left;
+    font-size: 18px;
+    color: #ff2600;
+    font-family: 'Source Sans Pro';
+    text-decoration: none;
+}
+
+.button-secondary {
+    position: relative;
+    border-radius: 8px;
+    border: 2px solid #ff2600;
+    box-sizing: border-box;
+    width: 135px;
+    height: 56px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 14px 18px;
+    text-align: left;
+    font-size: 18px;
+    color: #fff;
+    background-color: #ff2600;
+    font-family: 'Source Sans Pro';
+    text-decoration: none;
+}
