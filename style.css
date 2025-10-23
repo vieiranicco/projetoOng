@@ -1,8 +1,15 @@
+#bg {
+	background-color: #f7f3eb; 
+	padding: 0;
+	border: none;
+	font-family: Sora;
+}
+
 .navnav2 {
   	width: 100%;
   	height: 65px;
   	position: relative;
-  	background-color: #0102b5;
+  	background-color: #0102B5;
   	display: flex;
   	flex-direction: column;
   	align-items: center;
@@ -25,6 +32,7 @@
   	display: flex;
   	align-items: center;
   	gap: 42px;
+	text-decoration: none;
 }
 .frame-child {
   	height: 38.7px;
@@ -39,11 +47,14 @@
   	font-weight: 600;
   	display: inline-block;
   	flex-shrink: 0;
+	color: #fff;	
 }
 .projetos {
   	position: relative;
   	line-height: 20px;
   	font-weight: 600;
+	text-decoration: none;
+	color: #fff;
 }
 .button-parent {
   	display: flex;
@@ -65,6 +76,26 @@
   	align-items: center;
   	padding: 8px 12px;
 }
+
+.button-card1 {
+	display: inline-block;
+    padding: 8px 12px;
+    border: 1px solid #ff2600;
+    color: #fff;
+	background-color: #FF2600;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+	text-align: center;
+}
+
+
+
+.button-card1:hover {
+    background-color: white;
+    color: #0102B5; /* Cor azul escura */
+}
 .elements {
   	display: flex;
   	align-items: center;
@@ -83,7 +114,7 @@
   	line-height: 51px;
   	font-weight: 600;
   	font-family: Sora;
-  	color: #000;
+  	color: #fff;
   	text-align: center;
   	display: inline-block;
 }
@@ -94,13 +125,14 @@
   	font-size: 20px;
   	line-height: 30px;
   	font-family: Sora;
-  	color: #000;
+  	color: #fff;
   	text-align: center;
   	display: inline-block;
 }
 
 #hero {
-    background-image: url('images/image_main.png');
+	background-color: #f7f3eb; 
+    background-image: url('images/Frame 497.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -125,17 +157,22 @@
     border-radius: 8px;
     border: 2px solid #ff2600;
     box-sizing: border-box;
-    width: 165px;
+    width: 170px;
     height: 56px;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 14px 18px;
     text-align: left;
-    font-size: 18px;
+    font-size: 16px;
     color: #ff2600;
-    font-family: 'Source Sans Pro';
+	font-family: Sora;
     text-decoration: none;
+}
+
+.button-primary:hover {
+    background-color: white;
+    color: #0102B5; /* Cor azul escura */
 }
 
 .button-secondary {
@@ -150,9 +187,687 @@
     align-items: center;
     padding: 14px 18px;
     text-align: left;
-    font-size: 18px;
+    font-size: 16px;
     color: #fff;
     background-color: #ff2600;
-    font-family: 'Source Sans Pro';
+	font-family: Sora;
     text-decoration: none;
+}
+
+.button-secondary:hover {
+    background-color: white;
+    color: #0102B5; /* Cor azul escura */
+}
+
+#para {
+	background-color: #f7f3eb; 
+	display: flex;
+    align-items: center; 
+    gap: 40px; 
+    max-width: 1200px; 
+    margin-left: auto;  
+    margin-right: auto;  
+    padding: 40px 20px; 
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.para-coluna-texto {
+    flex: 1; 
+}
+
+.para-coluna-imagem {
+    flex: 1; 
+}
+
+a {
+	text-decoration: none;
+	color: #fff;
+}
+
+.image-para {
+	width: 100%;
+	position: relative;
+	max-width: 100%;
+	overflow: hidden;
+	max-height: 100%;
+	object-fit: cover;
+}
+
+.title-para {
+	width: 100%;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 36px;
+	text-align: left;
+	font-size: 32px;
+	color: #000;
+	font-family: Sora;
+}
+
+.causas-text {
+  	width: 100%;
+  	position: relative;
+  	font-size: 36px;
+  	line-height: 38px;
+  	font-weight: 600;
+  	font-family: Sora;
+  	color: #000;
+  	text-align: center;
+  	display: inline-block;
+}
+
+/*
+ * Secção Causas (Carrossel)
+ */
+#causes {
+    /* Cor de fundo creme/bege */
+    background-color: #f7f3eb; 
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#causes h2 {
+    font-size: 2.5rem; /* (Ajusta o tamanho) */
+    color: #333;
+    margin-bottom: 40px;
+}
+
+/* * O Card (O conteúdo DENTRO do swiper-slide)
+ */
+.cause-card {
+    /* O Swiper cuida da largura, nós cuidamos da aparência */
+    width: 100%; 
+    background-color: #ffffff; /* Azul escuro do teu design */
+
+    /* Isso garante que a imagem e o conteúdo azul 
+       fiquem "presos" dentro das bordas arredondadas */
+    overflow: hidden; 
+    
+    /* (Opcional) Sombra suave */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.cause-card img {
+    width: 100%;
+    height: 200px; /* (Define uma altura fixa para as imagens) */
+    
+    /* Garante que a imagem cubra a área sem distorcer */
+    object-fit: cover; 
+    display: block;
+	border: none;
+	display: block;
+}
+
+/* * A parte azul do card 
+ */
+.card-content {
+
+    padding-left: 24px;
+    padding-right: 24px; 
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center; 
+    color: #ff2600;
+	background-color: #0102B5;
+}
+
+.card-content h3 {
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 8px;
+	
+}
+
+.card-content p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    opacity: 0.8; /* Torna o subtítulo um pouco mais suave */
+}
+
+/* * O botão "Conhecer Projeto" (estilo "outline")
+ */
+.button-card {
+	display: inline-block;
+    padding: 10px 18px;
+    border: 1px solid #ff2600;
+    color: #ff2600;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+	text-align: center;
+}
+
+.button-card:hover {
+    background-color: white;
+    color: #0102B5; /* Cor azul escura */
+}
+
+/*
+ * Container do botão vermelho principal
+ */
+.causes-footer {
+    margin-top: 40px;
+}
+
+.button-3 {
+    /* Aparência */
+    display: inline-block; /* Permite aplicar padding e margens */
+    background-color: #ff2600; /* Um tom de vermelho forte (ajuste se necessário) */
+    color: white;             /* Texto branco */
+    border-radius: 8px;       /* Cantos arredondados */
+    border: none;             /* Sem borda */
+    
+    /* Espaçamento */
+    padding: 12px 24px;     /* 12px em cima/baixo, 24px nos lados */
+    
+    /* Texto */
+    font-weight: bold;
+    text-decoration: none;    /* <-- REMOVE O SUBLINHADO */
+    text-align: center;
+    
+    /* Efeito ao passar o rato (hover) */
+    transition: background-color 0.3s ease;
+}
+
+/* Efeito ao passar o rato por cima */
+.button-3:hover {
+    background-color: #ff2600d3; /* Um tom de vermelho mais escuro */
+    cursor: pointer;          /* Mostra a "mãozinha" */
+}
+
+/* * Customização das setas do Swiper (para ficarem iguais ao design)
+ * Elas estão levemente visíveis na tua imagem, por cima das fotos.
+ */
+.swiper-button-prev,
+.swiper-button-next {
+    /* O Swiper usa '::after' para o ícone da seta */
+    color: white; 
+    background-color: rgba(0, 0, 0, 0.3); /* Fundo preto semitransparente */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+/* Reduz o tamanho do ícone da seta */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    font-size: 1.2rem;
+}
+
+/*
+ * ========================================
+ * SECÇÃO MISSÃO, VISÃO E VALORES
+ * ========================================
+ */
+
+/* 1. O container da secção inteira (fundo laranja escuro) */
+#mission-values {
+    /* Cor de fundo laranja escuro do teu design */
+    background-color: #FFAE00; /* (Ajusta esta cor se for diferente) */
+    
+    /* Adiciona espaço interno (em cima/baixo e nos lados) */
+    padding: 60px 20px; 
+}
+
+/* 2. O Título principal ("Missão, Visão e Valores") */
+#mission-values h2 {
+    text-align: center; /* Centraliza o título */
+    font-size: 2.5rem;  /* Tamanho grande (ajuste) */
+    color: #000000;     /* Cor preta */
+    margin-top: 0;
+    margin-bottom: 40px; /* Espaço abaixo do título */
+}
+
+/* 3. O container que "abraça" as 3 caixas (Flexbox) */
+.values-container {
+    /* Ativa o Flexbox! */
+    display: flex;
+    
+    /* Permite que as caixas quebrem para a linha de baixo em telas pequenas */
+    flex-wrap: wrap; 
+    
+    /* Centraliza as caixas na horizontal */
+    justify-content: center; 
+    
+    /* Cria um espaço de 30px entre as caixas */
+    gap: 69px; 
+    
+    /* (Opcional) Limita a largura máxima para leitura */
+    max-width: 1200px;
+    margin: 0 auto; /* Centra o container em si */
+}
+
+/* 4. As caixas individuais (fundo laranja claro) */
+.value-box {
+    /* Cor de fundo laranja claro/bege */
+    background-color: #FFC64A; /* (Ajusta esta cor) */
+    
+    /* Espaçamento interno */
+    padding: 24px;
+    
+    /* Cantos levemente arredondados */
+
+    /* --- Comandos Flex --- */
+    /* 'flex: 1' diz "ocupe 1 parte do espaço" */
+    flex: 1; 
+    
+    /* Define uma largura mínima para cada caixa, 
+       ajudando na quebra de linha (responsividade) */
+    min-width: 280px; 
+    
+    /* Define uma largura máxima, para não esticarem demais */
+    max-width: 350px; 
+    
+    /* Padrão: Centraliza o h3 e o p das duas primeiras caixas */
+    text-align: center;
+}
+
+/* 5. Títulos das caixas (Missão, Visão, Valores) */
+.value-box h3 {
+    font-size: 1.8rem;
+    color: #000000;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+/* 6. Parágrafos das caixas */
+.value-box p {
+    font-size: 1rem;
+    line-height: 1.6; /* Melhora a legibilidade */
+    color: #333; /* Cor de texto escura (não preto puro) */
+}
+
+/* * 7. (IMPORTANTE) Ajuste para a caixa de "Valores"
+ * Queremos que a lista fique alinhada à esquerda.
+ * Usamos ':last-child' para selecionar o último .value-box
+ */
+.value-box:last-child {
+    text-align: left; /* Alinha o h3 e a lista à esquerda */
+}
+
+/* 8. Estilização da Lista (dentro da última caixa) */
+.value-box:last-child ol {
+    margin: 0;
+    /* Adiciona o recuo correto para os números */
+    padding-left: 25px; 
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Espaçamento entre os itens da lista */
+.value-box:last-child li {
+    margin-bottom: 10px;
+}
+
+/*
+ * ========================================
+ * SECÇÃO ÚLTIMAS NOTÍCIAS
+ * ========================================
+ */
+
+/* 1. A secção principal (fundo bege) */
+#news {
+    /* (Reutilizando a cor de fundo bege de antes) */
+    background-color: #f7f3eb; 
+    padding: 60px 20px;
+}
+
+/* 2. Título da Secção */
+#news h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+/* 3. O Container (Flexbox) que segura os cards */
+.news-container {
+    display: flex;
+    justify-content: center; /* Centra os cards */
+    flex-wrap: wrap;         /* Permite quebra de linha em telas pequenas */
+    gap: 130px;               /* Espaço entre os cards */
+    
+    /* Limita a largura e centra */
+    max-width: 1200px;
+    margin: 0 auto; 
+}
+
+/* 4. O Card Individual */
+.news-card {
+
+	background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+
+    /* --- Comandos Flex --- */
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px; /* (Largura máxima do card) */
+    padding: 5px; /* 5px de espaço em TODOS os lados */
+
+    box-sizing: border-box;
+}
+
+.news-card:hover {
+    transform: translateY(-5px); /* Levanta o card */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra mais forte */
+}
+
+/* 5. A Imagem dentro do Card */
+.news-card img {
+    width: 100%;
+    height: auto; 
+    display: block; /* Remove espaços brancos estranhos */
+    padding: 0;
+}
+
+/* 6. O container do texto */
+.news-content {
+    /* É ESTE padding que cria o espaço interno
+       para todo o texto, abaixo da imagem */
+    padding: 10px; 
+}
+
+/* 7. Estilização dos textos */
+
+.news-content .category {
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #888; /* Cinza */
+}
+
+.news-content h3 {
+    font-size: 1.25rem;
+    color: #333;
+    margin: 0 0 10px 0;
+    line-height: 1.3;
+}
+
+.news-content p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+    margin: 0 0 15px 0;
+}
+
+.news-content a {
+    font-size: 0.9rem;
+    color: #ff2600d3; 
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.news-content a:hover {
+    text-decoration: underline;
+}
+
+/*
+ * ========================================
+ * SECÇÃO DE CONTATO
+ * ========================================
+ */
+
+/* 1. O container da secção inteira (fundo azul) */
+#contact {
+    /* Cor de fundo azul vivo do teu design */
+    background-color: #0102B5; /* (Ajusta esta cor se for diferente) */
+    
+    /* Cor de texto padrão (branca) para o <h2> e <p> */
+    color: white; 
+    
+    /* Espaçamento interno grande */
+    padding: 80px 40px; 
+    
+    /* --- O Layout de 2 Colunas --- */
+    display: flex;
+    flex-wrap: wrap; /* Permite quebrar para 1 coluna em telas pequenas */
+    gap: 40px;       /* Espaço entre a coluna de texto e a de formulário */
+    
+    /* (Opcional) Alinha o texto e o formulário pelo centro verticalmente */
+    align-items: center; 
+}
+
+/* 2. As colunas (Texto e Formulário) */
+.contact-text,
+.contact-form {
+    /* Cada coluna ocupa 1 parte do espaço (cria o 50/50) */
+    flex: 1; 
+    
+    /* Largura mínima para ajudar na quebra de linha (responsividade) */
+    min-width: 300px; 
+}
+
+/* 3. Estilização da Coluna de Texto */
+.contact-text h2 {
+    font-size: 2.8rem; /* Tamanho grande */
+    font-weight: bold;
+    line-height: 1.2;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.contact-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.9; /* Torna o parágrafo um pouco mais suave */
+	font-family: Sora;
+}
+
+/* 4. O Formulário (para empilhar os campos) */
+.contact-form form {
+    display: flex;
+    flex-direction: column; /* Empilha os campos verticalmente */
+    font-family: Sora;
+    /* Cria um espaço de 15px entre cada campo (input/textarea) */
+    gap: 15px; 
+}
+
+/* * 5.Esconder as Labels
+ * O teu design não mostra as <label> (Nome, Email, etc.),
+ * mas elas são essenciais para acessibilidade (leitores de tela).
+ * Esta regra "esconde" a label visualmente, mas mantém-na acessível.
+ */
+.contact-form label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+	font-family: Sora;
+}
+
+/* 6. Estilização dos campos (Input e Textarea) */
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%; /* Ocupa 100% da largura da coluna */
+    
+    /* Cor de fundo bege/creme do teu design */
+    background-color: #f7f3eb; 
+    font-family: Sora;
+    border: none;             /* Remove a borda padrão */
+    border-radius: 8px;       /* Cantos arredondados */
+    padding: 18px 20px;       /* Espaçamento interno (deixa-o "alto") */
+    
+    /* Cor do texto que o usuário digita */
+    color: #333; 
+    font-size: 1rem;
+    
+    /* (MUITO IMPORTANTE) Garante que o padding não "estoure" a largura */
+    box-sizing: border-box; 
+}
+
+/* 7. Estilização do texto "placeholder" (o texto cinza) */
+.contact-form ::placeholder {
+    color: #888; /* Cor cinza para o placeholder */
+    opacity: 1;  /* Garante que fique visível */
+	font-family: Sora;
+}
+
+/* 8. Ajuste específico para o <textarea> */
+.contact-form textarea {
+    min-height: 150px; /* Define uma altura mínima */
+    resize: vertical;    /* Permite ao usuário redimensionar (apenas verticalmente) */
+	font-family: Sora;
+}
+
+/* 9. O Botão Enviar */
+
+.contact-form button.button-4 {
+    width: 100%;
+    color: #fff;
+    /* (Opcional) Aumenta o padding vertical para ficar mais "robusto" */
+    padding-top: 18px;
+    padding-bottom: 18px;
+    background-color: #FF2600;
+	border-radius: 8px;       /* Cantos arredondados */
+    /* (Opcional) Aumenta a fonte do botão */
+    font-size: 1.1rem; 
+	font-family: Sora;
+}
+
+.contact-form button.button-4:hover {
+    background-color: white;
+    color: #0102B5; /* Cor azul escura */
+}
+
+/*
+ * ========================================
+ * SECÇÃO EMPRESAS PARCEIRAS
+ * ========================================
+ */
+
+
+#partners {
+    /* Reutilizando a cor de fundo bege das outras secções */
+    background-color: #f7f3eb; 
+    padding: 60px 20px;
+    
+    /* Garante que o carrossel não fique "colado" nas bordas */
+    overflow: hidden;
+}
+
+/* 2. Título da Secção */
+#partners h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #000;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+/* 3. O Slide (o "contentor" de cada logo) */
+.partner-carousel .swiper-slide {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* O Swiper vai cuidar da largura */
+}
+
+/* 4. A Imagem (o logo em si) */
+.partner-carousel img {
+    /* Define uma largura máxima para o logo não ficar gigante */
+    max-width: 150px; 
+    
+    /* Garante que a altura se ajuste automaticamente */
+    height: auto;
+    
+
+    filter: grayscale(100%);
+    opacity: 0.7;
+    
+    /* Efeito de transição suave */
+    transition: all 0.3s ease;
+}
+
+
+.partner-carousel .swiper-slide:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.1); /* Aumenta ligeiramente o tamanho */
+}
+
+/*
+ * ========================================
+ * RODAPÉ (FOOTER)
+ * ========================================
+ */
+
+/* 1. O container principal do rodapé */
+footer {
+    /* Cor de fundo laranja do seu design */
+    background-color: #FFAE00; /* (A mesma cor da secção "Missão") */
+    
+    /* Espaçamento interno */
+    padding: 30px 63px; /* 30px em cima/baixo, 40px nos lados */
+
+    /* --- A MÁGICA DO LAYOUT --- */
+    
+    /* 1. Ativa o Flexbox */
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+/* 2. O Logo do Rodapé */
+
+.footer-logo a {
+    /* Garante que a imagem se comporte como um bloco */
+    display: inline-block; 
+}
+
+/* 2. A Imagem (<img>) dentro do link */
+.footer-logo img {
+    height: 40px; 
+    width: auto; 
+    vertical-align: middle; 
+}
+
+/* 3. A Lista de Navegação (<ul>) */
+.footer-nav ul {
+    /* Remove as "bolinhas" da lista */
+    list-style: none; 
+    
+    /* Remove o espaçamento padrão do navegador */
+    margin: 0;
+    padding: 0;
+    
+    /* Torna os <li> horizontais */
+    display: flex; 
+    
+    /* Cria um espaço entre cada item da lista */
+    gap: 30px; 
+}
+
+/* 4. Os Links da Navegação (<a>) */
+.footer-nav a {
+    /* Cor azul escura/roxa do seu design */
+    color: #0102B5; 
+    
+    /* Remove o sublinhado */
+    text-decoration: none; 
+    
+    font-weight: bold;
+    font-size: 0.9rem;
+    
+    /* Efeito suave ao passar o rato */
+    transition: color 0.3s ease;
+}
+
+/* 5. Efeito Hover nos Links */
+.footer-nav a:hover {
+    /* (Opcional) Muda a cor para o vermelho do logo */
+    color: #FF2600; 
 }
