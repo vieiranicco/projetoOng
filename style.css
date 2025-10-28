@@ -3,6 +3,7 @@
 	padding: 0;
 	border: none;
 	font-family: Sora;
+    
 }
 
 .navnav2 {
@@ -67,6 +68,7 @@
   	display: flex;
   	flex-direction: column;
   	align-items: center;
+  	background-color: #ff2600;
 }
 .button2 {
   	border-radius: 6px;
@@ -270,7 +272,7 @@ a {
 }
 
 #causes h2 {
-    font-size: 2.5rem; /* (Ajusta o tamanho) */
+    font-size: 2.25rem; /* (Ajusta o tamanho) */
     color: #333;
     margin-bottom: 40px;
 }
@@ -415,7 +417,7 @@ a {
 /* 2. O Título principal ("Missão, Visão e Valores") */
 #mission-values h2 {
     text-align: center; /* Centraliza o título */
-    font-size: 2.5rem;  /* Tamanho grande (ajuste) */
+    font-size: 2.25rem;  /* Tamanho grande (ajuste) */
     color: #000000;     /* Cor preta */
     margin-top: 0;
     margin-bottom: 40px; /* Espaço abaixo do título */
@@ -519,7 +521,7 @@ a {
 /* 2. Título da Secção */
 #news h2 {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     color: #333;
     margin-top: 0;
     margin-bottom: 40px;
@@ -646,7 +648,7 @@ a {
 
 /* 3. Estilização da Coluna de Texto */
 .contact-text h2 {
-    font-size: 2.8rem; /* Tamanho grande */
+    font-size: 2.25rem; /* Tamanho grande */
     font-weight: bold;
     line-height: 1.2;
     margin-top: 0;
@@ -760,7 +762,7 @@ a {
 /* 2. Título da Secção */
 #partners h2 {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     color: #000;
     margin-top: 0;
     margin-bottom: 40px;
@@ -801,73 +803,231 @@ a {
 
 /*
  * ========================================
+ * SECÇÃO NEWSLETTER
+ * ========================================
+ */
+
+/* 1. O container da secção inteira (fundo azul) */
+#newsletter {
+    /* Cor de fundo azul vivo do teu design */
+    background-color: #0102B5; /* (Ajusta este azul se for diferente) */
+    color: white;
+    
+    /* Espaçamento interno */
+    padding: 9px 66px; 
+    font-family: Sora;
+
+    /* Layout de 2 colunas */
+    display: flex;
+    justify-content: space-between; /* Um em cada ponta */
+    align-items: center;          /* Alinhados ao centro (vertical) */
+    margin-bottom: 56px;
+    /* Para quebrar em telas pequenas */
+    flex-wrap: wrap;              
+    gap: 30px;
+}
+
+/* 2. Coluna de Texto */
+.newsletter-text {
+    flex: 1; /* Ocupa 50% do espaço */
+    min-width: 300px; /* Largura mínima para quebra de linha */
+    font-family: sora;
+    font-size: 18px;
+}
+
+.newsletter-text h2 {
+    font-size: 2.2rem; /* (Ajusta o tamanho) */
+    font-weight: bold;
+    line-height: 1.3;
+    margin: 0;
+    font-family: sora;
+    font-size: 24px;
+}
+
+/* 3. Coluna do Formulário */
+.newsletter-form-container {
+    flex: 1; /* Ocupa os outros 50% do espaço */
+    min-width: 300px;
+}
+
+/* * 4. O FUNDO ONDULADO LARANJA
+ * (A parte mais importante!)
+ */
+.form-wavy-background {
+    /* *** ATENÇÃO ***
+      Substitui 'images/wavy-background.png' pelo caminho
+      correto da imagem que exportaste do Figma.
+    */
+    background-image: url('images/Frame 499.png');
+    
+    /* Faz a imagem repetir na horizontal (caso tenhas exportado só um "pedaço") */
+    background-repeat: repeat-x; 
+    
+    /* Centraliza a imagem verticalmente */
+    
+    /* Garante que a imagem caiba, ajustando a sua altura */
+    background-size: cover; 
+    
+    /* Adiciona um espaço INTERNO para o formulário "respirar" */
+    padding: 20px; 
+}
+
+/* 5. O Formulário (para alinhar input e botão) */
+.form-wavy-background form {
+    display: flex;
+    width: 100%;
+    
+    /* ==== 1. ADICIONE ESTA LINHA ==== */
+    /* Isto cria o espaço que você quer entre o input e o botão */
+    gap: 10px; /* (Pode ajustar este valor, ex: 8px, 12px) */
+}
+
+/* 6. O Campo de E-mail (o "input" bege) */
+.form-wavy-background input[type="email"] {
+    flex: 1; 
+    background-color: #f7f3eb; 
+    border: none;
+    padding: 16px 20px;
+    font-size: 1rem;
+    color: #333;
+    outline: none; 
+    
+    /* ==== 2. MUDANÇA AQUI ==== */
+    /* Em vez de arredondar só os cantos da esquerda,
+       agora arredondamos TODOS os cantos. */
+    border-radius: 8px;
+    
+    /* (As linhas antigas 'border-top-left-radius' e 
+       'border-bottom-left-radius' podem ser apagadas) */
+}
+
+/* * 7. O Botão "Assinar" (vermelho) 
+ */
+.form-wavy-background button.button {
+    /* ==== 3. MUDANÇA AQUI ==== */
+    /* Apague as linhas que tiravam o arredondamento 
+       dos cantos da esquerda: */
+    /* border-top-left-radius: 0; */
+    /* border-bottom-left-radius: 0; */
+    
+    /* A sua classe .button já deve ter 'border-radius: 8px;', 
+       então não precisamos adicionar nada, apenas remover 
+       as regras que o anulavam. */
+    
+    white-space: nowrap; 
+}
+
+/* 8. (ACESSIBILIDADE) Classe para esconder labels */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/*
+ * ========================================
  * RODAPÉ (FOOTER)
  * ========================================
  */
 
 /* 1. O container principal do rodapé */
 footer {
-    /* Cor de fundo laranja do seu design */
-    background-color: #FFAE00; /* (A mesma cor da secção "Missão") */
+    background-color: #FFAE00; /* Cor de fundo laranja */
+    padding: 30px 40px;        /* Espaçamento interno */
+    display: flex;             /* Liga o Flexbox */
+    justify-content: space-between; /* Logo para a esquerda, Nav para a direita */
     
-    /* Espaçamento interno */
-    padding: 30px 63px; /* 30px em cima/baixo, 40px nos lados */
-
-    /* --- A MÁGICA DO LAYOUT --- */
-    
-    /* 1. Ativa o Flexbox */
-    display: flex;
-    justify-content: space-between; 
+    /* (CHAVE DE ALINHAMENTO 1) 
+       Alinha o LOGO e a NAV (os 2 filhos diretos) verticalmente */
     align-items: center; 
 }
 
-/* 2. O Logo do Rodapé */
-
+/* 2. O Logo */
 .footer-logo a {
-    /* Garante que a imagem se comporte como um bloco */
-    display: inline-block; 
+    display: inline-block; /* Remove espaços extra */
 }
-
-/* 2. A Imagem (<img>) dentro do link */
 .footer-logo img {
-    height: 40px; 
+    height: 40px; /* Ajusta a altura do logo */
     width: auto; 
-    vertical-align: middle; 
+    vertical-align: middle; /* Alinhamento fino */
 }
 
 /* 3. A Lista de Navegação (<ul>) */
 .footer-nav ul {
-    /* Remove as "bolinhas" da lista */
-    list-style: none; 
-    
-    /* Remove o espaçamento padrão do navegador */
+    list-style: none; /* Remove "bolinhas" */
     margin: 0;
     padding: 0;
+    display: flex;    /* Liga o Flexbox para os <li> ficarem horizontais */
+    gap: 30px;        /* Espaço GRANDE entre os itens (ex: Blog e Ícones) */
     
-    /* Torna os <li> horizontais */
-    display: flex; 
-    
-    /* Cria um espaço entre cada item da lista */
-    gap: 30px; 
+    /* (CHAVE DE ALINHAMENTO 2) 
+       Alinha todos os <li> (Texto e Ícones) verticalmente */
+    align-items: center; 
 }
 
-/* 4. Os Links da Navegação (<a>) */
+/* 4. Os Links de texto (<a>) */
 .footer-nav a {
-    /* Cor azul escura/roxa do seu design */
     color: #0102B5; 
-    
-    /* Remove o sublinhado */
     text-decoration: none; 
-    
     font-weight: bold;
     font-size: 0.9rem;
-    
-    /* Efeito suave ao passar o rato */
     transition: color 0.3s ease;
 }
-
-/* 5. Efeito Hover nos Links */
 .footer-nav a:hover {
-    /* (Opcional) Muda a cor para o vermelho do logo */
-    color: #FF2600; 
+    color: #FF2600; /* Vermelho */
+}
+
+/* 5. O LI que segura os ícones */
+.icons-media-item {
+    list-style: none; /* Garante que não há "bolinha" */
+}
+
+/* 6. O DIV que segura os ícones (dentro do LI) */
+.icons-media {
+    display: flex; /* Liga o Flexbox para os ícones ficarem horizontais */
+    
+    /* (CHAVE DE ALINHAMENTO 3) 
+       Alinha os <a> dos ícones (caso um seja mais alto) */
+    align-items: center; 
+    
+    /* (A TUA SOLUÇÃO) Espaço PEQUENO, só entre os ícones */
+    gap: 12px; 
+}
+
+/* 7. As IMAGENS dos ícones */
+.icons-media img {
+    height: 24px; /* Tamanho dos ícones (ajuste se precisar) */
+    width: auto;
+    display: block; /* Remove espaços extra por baixo da imagem */
+}
+
+.title_sobre {
+    background-color: #FFAE00;
+    display: inline-flex;
+    align-items: center;
+    margin: 0px 0px;
+}
+
+.text_sobre {
+    display: flex;
+    margin-top: 6px;
+}
+
+#about-content {
+    margin-left: 35px;
+    font-family: sora;
+}
+
+#about-content h2 {
+    font-size: 32px;
+
+}
+#about-content p {
+    font-size: 18px;
+
 }
