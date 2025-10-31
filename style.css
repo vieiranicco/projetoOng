@@ -1011,11 +1011,13 @@ footer {
     display: inline-flex;
     align-items: center;
     margin: 0px 0px;
+    margin-left: 70px;
 }
 
 .text_sobre {
     display: flex;
     margin-top: 6px;
+    margin-left: 70px;
 }
 
 #about-content {
@@ -1030,4 +1032,821 @@ footer {
 #about-content p {
     font-size: 18px;
 
+}
+/*
+ * ========================================
+ * SECÇÃO "PROJETOS PARCEIROS"
+ * ========================================
+ */
+
+/* 1. O "invólucro" que limita a largura */
+.projects-wrapper {
+    max-width: 900px; /* (Ajuste esta largura como quiser) */
+    margin: 60px auto; /* 60px em cima/baixo, 'auto' nos lados (para centrar) */
+    padding: 0 20px;   /* Impede o conteúdo de tocar nas bordas em telemóveis */
+}
+
+/* 2. Título da Secção */
+#partner-projects h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+/* 3. A lista que segura os cards */
+.projects-list {
+    display: flex;
+    flex-direction: column; /* Empilha os cards verticalmente */
+    
+    /* Cria um espaço de 40px ENTRE cada card */
+    gap: 40px; 
+}
+
+/* * 4. O Card Individual (A MÁGICA DO LAYOUT)
+ */
+.project-card {
+    display: flex;   /* Ativa o Flexbox (para criar as 2 colunas) */
+    
+    /* Espaço entre a imagem e o texto */
+    gap: 24px; 
+    
+    /* Alinha o texto ao TOPO da imagem (se preferir no centro, use 'center') */
+    align-items: flex-start; 
+}
+
+/* 5. A Coluna da Imagem */
+.project-image {
+    width: 250px; /* Define uma largura fixa para a imagem */
+    flex-shrink: 0; /* Impede a imagem de "encolher" */
+}
+
+.project-image img {
+    width: 100%; /* Faz a imagem ocupar os 250px do "pai" */
+    height: 180px; /* Define uma altura fixa */
+    object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+    border-radius: 8px; /* Cantos arredondados */
+    display: block; /* Remove espaços brancos por baixo da imagem */
+}
+
+/* 6. A Coluna de Conteúdo de Texto */
+.project-content {
+    flex: 1; /* Faz esta coluna ocupar todo o espaço restante */
+}
+
+.project-content h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.project-content .project-author {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #555;
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.project-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* * 7. O NOVO Botão "Vazado" (Outline)
+ */
+.button-outline {
+    display: inline-block;
+    padding: 8px 16px;
+    
+    /* Usa a mesma cor vermelha principal */
+    border: 1px solid #E53935; 
+    color: #E53935;
+    
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.button-outline:hover {
+    background-color: #E53935;
+    color: white;
+}
+
+
+/* * ========================================
+ * ESTILOS DA PAGINAÇÃO
+ * ========================================
+ */
+
+/* 8. O container da navegação (<nav>) */
+.pagination-nav {
+    display: flex; /* Usamos flex para centrar a lista <ul> */
+    justify-content: center;
+    margin-top: 50px; /* Espaço acima da paginação */
+}
+
+/* 9. A lista (<ul>) */
+.pagination {
+    list-style: none; /* Remove "bolinhas" */
+    padding: 0;
+    display: flex; /* Coloca os números lado a lado */
+    gap: 10px; /* Espaço entre os números */
+}
+
+/* 10. Os links de número (<a>) */
+.page-number {
+    display: block;
+    padding: 8px 14px; /* Tamanho do "botão" */
+    text-decoration: none;
+    color: #555;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.page-number:hover {
+    background-color: #f4f4f4;
+}
+
+/* 11. O número da página ATIVA (azul) */
+.page-number.current {
+    /* Cor azul do teu design */
+    background-color: #0000ff; 
+    border-color: #0000ff;
+    color: white;
+}
+
+/*
+ * ========================================
+ * PÁGINA DE DETALHE DO PROJETO
+ * ========================================
+ */
+
+/* 1. O "invólucro" que segura as 2 colunas */
+.project-detail-container {
+    display: flex;
+    flex-wrap: wrap; /* Para quebrar em telas pequenas */
+    
+    /* Define a largura máxima e centra na página */
+    max-width: 1200px; 
+    margin: 60px auto; /* Espaço em cima/baixo e centrado */
+    padding: 0 20px;
+    
+    /* Espaço entre a coluna principal e a sidebar */
+    gap: 40px; 
+}
+
+/* 2. A Coluna Principal (Esquerda) */
+.project-main-content {
+    /* flex: 2; diz para esta coluna ocupar "2 partes" do espaço.
+      Isto fará com que ela seja ~66% da largura.
+    */
+    flex: 2; 
+    min-width: 0; /* Boa prática de Flexbox para evitar quebra */
+}
+
+/* 3. A Barra Lateral (Direita) */
+.project-sidebar {
+    /* flex: 1; diz para esta coluna ocupar "1 parte" do espaço.
+      Isto fará com que ela seja ~33% da largura.
+    */
+    flex: 1; 
+    
+    /* Define uma largura mínima para a sidebar */
+    min-width: 300px; 
+    
+    /* Vamos empilhar os cards da sidebar verticalmente */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espaço entre os cards da sidebar */
+}
+
+/* 4. Estilização do CONTEÚDO PRINCIPAL (Esquerda) */
+.project-main-content h2 {
+    font-size: 2.8rem;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+.project-main-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 20px;
+}
+.project-main-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+.project-main-content h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+.project-main-content ul {
+    list-style: disc; /* "Bolinhas" padrão */
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+.project-main-content li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+    color: #666;
+}
+.project-main-content li strong {
+    color: #333; /* Torna o texto em <strong> mais escuro */
+    font-weight: 700;
+}
+/* Adiciona espaço acima do botão "Doar Agora" */
+.project-main-content .button {
+    margin-top: 20px;
+    display: inline-block; /* Garante que a margem funcione */
+}
+
+/* 5. Estilização da BARRA LATERAL (Direita) */
+.project-sidebar h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 0; /* O 'gap' do flex já dá o espaço */
+}
+
+/* 6. Os Cards da Barra Lateral */
+.sidebar-card {
+    /* Cor de fundo bege/creme */
+    background-color: #f7f3eb; 
+    border-radius: 8px;
+    overflow: hidden; /* Para "prender" a imagem */
+    border: 1px solid #e0e0e0;
+}
+.sidebar-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+}
+.sidebar-card-content {
+    padding: 20px;
+    text-align: center;
+}
+.sidebar-card h4 {
+    font-size: 1.3rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+/* 7. O Novo Botão Azul da Barra Lateral */
+.button-sidebar {
+    display: inline-block;
+    width: 100%; /* Faz o botão ocupar 100% da largura do card */
+    padding: 10px 16px;
+    
+    /* Cor azul vivo */
+    background-color: #0000ff; 
+    color: white;
+    
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    
+    /* Garante que o padding não "estoure" a largura */
+    box-sizing: border-box; 
+}
+.button-sidebar:hover {
+    background-color: #0000cc; /* Azul um pouco mais escuro */
+}
+#contact-proj {
+    /* Cor de fundo azul vivo do teu design */
+    background-color: #FFAE00; /* (Ajusta esta cor se for diferente) */
+    
+    /* Cor de texto padrão (branca) para o <h2> e <p> */
+    color: #0102B5; 
+    
+    /* Espaçamento interno grande */
+    padding: 80px 40px; 
+    
+    /* --- O Layout de 2 Colunas --- */
+    display: flex;
+    flex-wrap: wrap; /* Permite quebrar para 1 coluna em telas pequenas */
+    gap: 40px;       /* Espaço entre a coluna de texto e a de formulário */
+    
+    /* (Opcional) Alinha o texto e o formulário pelo centro verticalmente */
+    align-items: center; 
+}
+
+.contact-text1{
+    padding-bottom: 335px;
+    flex: 1; 
+    min-width: 300px; 
+    font-size: 32px;
+}
+
+#hero1 {
+	background-color: #f7f3eb; 
+    background-image: url('images/Frame 497.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 100px 20px;
+}
+
+.button-card2 {
+	display: inline-block;
+    padding: 8px 12px;
+    border: 1px solid #ff2600;
+    color: #fff;
+	background-color: #FF2600;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+	text-align: center;
+    margin-left: 70px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Estilo base para botões */
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: var(--cor-branca);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-vermelho {
+    background-color: var(--cor-vermelha);
+}
+.btn-vermelho:hover {
+    filter: brightness(1.1);
+}
+
+/* --- ESTILOS DE COMPONENTES DO BLOG --- */
+
+/* Meta-informações (Tempo de leitura, data, etc) */
+.meta-info {
+    font-size: 0.9rem;
+    color: var(--cor-texto-secundario);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Espaço entre os itens */
+}
+
+/* Tag de Categoria (Para ONGs, etc) */
+.categoria-tag {
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: inline-block;
+    /* ALTERAR: Cor da tag da categoria */
+    color:#0102B5;
+}
+
+/* --- 1. SEÇÃO ARTIGO EM DESTAQUE --- */
+.secao-destaque {
+    padding-top: 60px;
+}
+
+.artigo-destaque {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.destaque-imagem img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.destaque-conteudo h1 {
+    font-size: 2.2rem;
+    line-height: 1.3;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.destaque-conteudo {
+        align-self: stretch;
+}
+
+.destaque-conteudo p {
+    font-size: 1rem;
+}
+
+/* --- 2. SEÇÃO DESTAQUES POR CATEGORIA --- */
+.secao-categorias {
+    padding-bottom: 20px; /* Menos padding inferior */
+}
+
+.grid-categorias {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    border-top: 1px solid var(--cor-cinza-borda);
+    padding-top: 40px;
+}
+
+.card-categoria h3 {
+    font-size: 1.4rem;
+    line-height: 1.4;
+    margin: 0 0 10px 0;
+}
+
+/* --- 3. SEÇÃO "ÚLTIMOS ARTIGOS" --- */
+.secao-ultimos h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.lista-artigos {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Espaço entre cada artigo da lista */
+}
+
+.artigo-lista {
+    display: grid;
+    /* Coluna da imagem com tamanho fixo, coluna do texto flexível */
+    grid-template-columns: 200px 1fr; 
+    gap: 25px;
+    align-items: flex-start; /* Alinha no topo */
+}
+
+.artigo-lista-imagem img {
+    width: 100%;
+    height: 100%; /* Faz a imagem preencher a altura */
+    min-height: 130px; /* Altura mínima */
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.artigo-lista-conteudo h3 {
+    font-size: 1.3rem;
+    margin: 0 0 10px 0;
+    line-height: 1.4;
+}
+
+/* --- 4. BOTÃO "VER TUDO" --- */
+.secao-ver-tudo {
+    text-align: center;
+    padding-top: 0;
+}
+
+/* --- 5. SEÇÃO NEWSLETTER --- */
+/* Estilos reutilizados da página "Sobre" */
+.secao-newsletter {
+    background-color: var(--cor-azul);
+    color: var(--cor-branca);
+    padding: 40px 0;
+}
+
+.grid-newsletter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    flex-wrap: wrap; /* Permite quebrar linha em ecrãs pequenos */
+    gap: 20px;
+}
+
+.grid-newsletter h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.form-newsletter {
+    display: flex;
+    gap: 10px;
+    flex-grow: 1; /* Faz o formulário tentar ocupar espaço */
+    min-width: 300px; /* Largura mínima */
+}
+
+.form-newsletter input {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.button-card3 {
+    display: table;
+    padding: 8px 12px;
+    border: 1px solid #ff2600;
+    color: #fff;
+	background-color: #FF2600;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+	text-align: center;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Estilo base para botões */
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: var(--cor-branca);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-vermelho {
+    background-color: var(--cor-vermelha);
+}
+.btn-vermelho:hover {
+    filter: brightness(1.1);
+}
+
+/* Meta-informações (Reutilizado do blog) */
+.meta-info {
+    font-size: 0.9rem;
+    color: var(--cor-texto-secundario);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+/* --- 1. LAYOUT PRINCIPAL E CONTEÚDO DO ARTIGO --- */
+.layout-post {
+    display: grid;
+    /* Coluna principal (70%), coluna da sidebar (30%) */
+    grid-template-columns: 2.3fr 1fr; 
+    gap: 50px; /* Espaço entre o post e a sidebar */
+}
+
+.post-cabecalho {
+    margin-bottom: 25px;
+    position: relative; /* Para o ícone de partilha */
+}
+
+.post-cabecalho h1 {
+    font-size: 2.8rem;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.icone-partilha {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--cor-texto-secundario);
+}
+
+.post-imagem-destaque img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+/* Estilos do corpo do post */
+.post-corpo {
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.post-corpo p {
+    margin-bottom: 20px;
+}
+
+.post-corpo ol, .post-corpo ul {
+    margin-bottom: 20px;
+    padding-left: 30px;
+}
+
+.post-corpo li {
+    margin-bottom: 10px;
+}
+
+.post-corpo strong {
+    color: #000;
+}
+
+/* Rodapé do post (Tags e Partilha) */
+.post-rodape {
+    display: grid;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.post-tags strong {
+    margin-right: 5px;
+}
+.post-tags a {
+    text-decoration: none;
+    color: var(--cor-azul);
+    font-size: 0.9rem;
+}
+
+.post-icones-partilha {
+    display: flex;
+    gap: 15px;
+}
+
+.post-icones-partilha span {
+    /* ALTERAR: Estilo dos ícones */
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: var(--cor-cinza-claro);
+    color: var(--cor-texto-secundario);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* --- 2. BARRA LATERAL (SIDEBAR) --- */
+.post-sidebar {
+    padding-top: 20px;
+}
+
+.post-sidebar h3 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--cor-azul);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.sidebar-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sidebar-item {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    text-decoration: none;
+    color: var(--cor-texto-principal);
+}
+
+.sidebar-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+    flex-shrink: 0; /* Impede a imagem de encolher */
+}
+
+.sidebar-item p {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: bold;
+    line-height: 1.4;
+}
+.sidebar-item:hover p {
+    color: var(--cor-azul);
+}
+
+/* --- 3. SEÇÃO DE COMENTÁRIOS --- */
+.secao-comentarios {
+    padding-top: 0;
+}
+
+.secao-comentarios h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Formulário de Comentário */
+.form-comentario textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid var(--cor-cinza-borda);
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    box-sizing: border-box; /* Garante que o padding não estoure a largura */
+}
+
+.form-comentario-info {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap; /* Quebra a linha em ecrãs pequenos */
+}
+
+.form-comentario-info input {
+    flex: 1; /* Ocupa o espaço disponível */
+    padding: 15px;
+    border: 1px solid var(--cor-cinza-borda);
+    border-radius: 5px;
+    font-size: 1rem;
+    min-width: 200px; /* Largura mínima */
+}
+
+.form-comentario-info .btn {
+    flex-shrink: 0; /* Impede o botão de encolher */
+}
+
+/* Lista de Comentários */
+.lista-comentarios {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.comentario-item {
+    border-bottom: 1px solid var(--cor-cinza-claro);
+    padding-bottom: 20px;
+}
+
+.comentario-item h4 {
+    margin: 0 0 5px 0;
+    font-size: 1.1rem;
+}
+
+.comentario-item p {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--cor-texto-secundario);
+}
+
+
+/* --- 4. SEÇÃO NEWSLETTER (Reutilizada) --- */
+.secao-newsletter {
+    background-color: var(--cor-azul);
+    color: var(--cor-branca);
+    padding: 40px 0;
+}
+
+.grid-newsletter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.grid-newsletter h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.form-newsletter {
+    display: flex;
+    gap: 10px;
+    flex-grow: 1;
+    min-width: 300px;
+}
+
+.form-newsletter input {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
 }
