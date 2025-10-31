@@ -1850,3 +1850,707 @@ footer {
     border-radius: 5px;
     font-size: 16px;
 }
+
+/*
+ * ========================================
+ * PÁGINA DO PAINEL (DASHBOARD)
+ * ========================================
+ */
+
+/* 1. O Container Principal (fundo bege) */
+.dashboard-container {
+    display: flex;
+    padding: 40px;
+    gap: 40px;
+}
+
+/* 2. A Barra Lateral (Sidebar) */
+.dashboard-sidebar {
+    flex: 0 0 250px; 
+    
+    /* (NOVO) Tom 2: O bege-médio da sidebar */
+    background-color: #E9DECD; 
+    
+    /* (NOVO) Adiciona o padding e os cantos arredondados 
+       que vemos no design */
+    padding: 30px;
+    border-radius: 8px;
+    
+    /* (NOVO) Garante que o padding não "estoure" a largura */
+    box-sizing: border-box;
+}
+.sidebar-logo img {
+    height: 40px;
+    width: auto;
+    margin-bottom: 30px;
+}
+.dashboard-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.dashboard-nav li {
+    margin-bottom: 15px;
+}
+.dashboard-nav a {
+    text-decoration: none;
+    color: #555; /* Cinza escuro */
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* 3. O Conteúdo Principal (Direita) */
+.dashboard-content {
+    flex: 1; /* Ocupa todo o resto do espaço */
+    background-color: #e9e5dc; 
+    
+    /* O mesmo padding e borda da sidebar */
+    padding: 30px;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+.dashboard-content h1 {
+    font-size: 2.8rem;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 10px;    background-color: #E9DECD; /* Fundo branco */
+    border-radius: 8px;
+    padding: 24px;
+}
+
+/* 4. Cards de Estatísticas */
+.stats-cards-container {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+.stat-card {
+    flex: 1; /* Faz os 3 cards terem a mesma largura */
+    background-color: #E9DECD; /* Fundo branco */
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+.stat-card p {
+    margin: 0 0 10px 0;
+    font-weight: 600;
+    color: #555;
+}
+.stat-card span {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    border-radius: 8px;
+    padding: 24px;
+    display: block; 
+    margin-top: 5px;
+}
+.notifications-card span {
+    font-size: 1rem; /* Fonte menor para o card de notificação */
+    font-weight: normal;
+    line-height: 1.4;
+}
+
+/* 5. Widgets Principais (Novidades e Calendário) */
+.main-widgets-container {
+    display: flex;
+    gap: 20px;
+}
+.widget-card {
+    flex: 1; /* Por padrão, 50% / 50% */
+    background-color: #E9DECD;
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+/* Faz o widget de novidades ser um pouco maior */
+#news-widget {
+    flex: 1.5; 
+}
+.widget-card h4 {
+    font-size: 1.3rem;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* 6. Lista de Novidades */
+#news-widget ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+#news-widget li {
+    margin-bottom: 15px;
+    padding-left: 20px; /* Espaço para a bolinha */
+    position: relative;
+    color: #555;
+    font-weight: 600;
+}
+/* Cria a "bolinha" cinza (padrão) */
+#news-widget li::before {
+content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #ccc; 
+    position: absolute;
+    left: 0;
+    top: 50%; 
+    transform: translateY(-50%);
+}
+/* Cria a "bolinha" vermelha (urgente) */
+#news-widget li.urgent::before {
+    background-color: #FF2600;
+}
+
+/*
+ * ========================================
+ * CSS PARA O CALENDÁRIO (GERADO POR JS)
+ * ========================================
+ */
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.calendar-header h5 {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    text-transform: capitalize;
+}
+/* O "grid" dos dias */
+.calendar-days-header,
+.calendar-grid {
+    display: grid;
+    /* Cria 7 colunas de larguras iguais */
+    grid-template-columns: repeat(7, 1fr); 
+    gap: 5px;
+    text-align: center;
+}
+.calendar-days-header div {
+    font-weight: bold;
+    font-size: 0.8rem;
+    color: #888;
+}
+.calendar-grid {
+    margin-top: 10px;
+}
+.calendar-day {
+    padding: 8px 5px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #555;
+}
+/* O "dia de hoje" (círculo vermelho) */
+.calendar-day.today {
+    background-color: #FF2600; /* Vermelho */
+    color: white;
+    border-radius: 50%;
+}
+
+/*
+ * ========================================
+ * (NOVOS ESTILOS) PAINEL ADMIN
+ * ========================================
+ */
+
+/* 1. O Título Duplo (Dashboard / Digitaliza...) */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between; /* Um em cada ponta */
+    align-items: center;
+    margin-bottom: 30px; /* (Já deve vir do h1) */
+    background-color: #E9DECD; /* Fundo cinza claro */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+.dashboard-header h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin: 0;
+    font-weight: 600; /* Mais fino que o h1 */
+    text-align: right;
+}
+
+/* 2. O Texto <small> dentro dos cards de stats */
+/* (Esta regra vai aplicar-se a todos os .stat-card) */
+.stat-card small {
+    font-size: 0.9rem;
+    color: #888;
+    margin-top: 10px;
+    display: block;
+    font-weight: normal;
+}
+
+/* 3. O Modificador do Card Azul */
+.stat-card.blue-card {
+    background-color: #0102B5; /* Azul vivo */
+    color: white; /* Cor de texto padrão */
+}
+/* Sobrescreve as cores para o card azul */
+.stat-card.blue-card span {
+    text-align: left;
+    color: white;
+
+}
+.stat-card.blue-card p,
+.stat-card.blue-card small {
+    color: white;
+}
+.stat-card.blue-card small {
+    opacity: 0.8; /* Deixa o <small> mais suave */
+}
+
+/* 4. O Widget de "Últimos Doadores" */
+/* Queremos que este widget seja maior que o calendário */
+#donors-widget {
+    flex: 2; /* Ocupa "2 partes" do espaço */
+}
+/* O calendário (que já existe) vai ocupar "1 parte" */
+#calendar-widget-container {
+    flex: 1; 
+}
+
+/* 5. A Lista de Doadores */
+.donor-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.donor-item {
+    display: flex; /* Alinha os itens lado a lado */
+    align-items: center; /* Centraliza verticalmente */
+    
+    /* Espaçamento e borda */
+    padding: 15px 0;
+    border-bottom: 1px solid #e9e5dc; /* Cor do Tom 2 (fundo) */
+}
+.donor-item:last-child {
+    border-bottom: none; /* Remove a borda do último item */
+}
+
+.avatar-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #0102B5; /* Azul vivo */
+    margin-right: 15px;
+}
+.donor-name {
+    font-weight: 600;
+    color: #333;
+}
+/* (O TRUQUE) Empurra o valor para a direita */
+.donor-amount {
+    font-weight: bold;
+    color: #555;
+    margin-left: auto; 
+}
+
+/* 6. O Botão "Ver Todos" (novo estilo) */
+.ver-todos-btn {
+    display: block; /* Para poder centrar */
+    width: max-content; /* Largura baseada no conteúdo */
+    margin: 20px auto 0 auto; /* Centra horizontalmente */
+    
+    padding: 8px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #555;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+.ver-todos-btn:hover {
+    background-color: #f4f4f4; /* Fundo cinza claro */
+    border-color: #aaa;
+}
+
+/*
+ * ========================================
+ * ESTILOS GLOBAIS DA PÁGINA DE LOGIN
+ * ========================================
+ */
+/*
+ * (IMPORTANTE)
+ * Estas regras forçam a página a ter 100% de altura
+ * para o layout split-screen funcionar.
+ * (Podes colocar isto no topo do teu CSS)
+ */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    /* Garante que a fonte "Sora" seja aplicada */
+    font-family: 'Sora', sans-serif; 
+}
+
+/*
+ * ========================================
+ * PÁGINA DE LOGIN
+ * ========================================
+ */
+
+/* 1. O Container Principal (Split-Screen) */
+.login-container {
+    display: flex;
+    width: 100%;
+    height: 100%; /* Ocupa a altura total do body/html */
+}
+
+/* 2. Coluna da Esquerda (Gráfico) */
+.login-graphic {
+    flex-basis: 50%; /* Ocupa 50% da largura */
+    
+    /* *** ATENÇÃO ***
+      Substitua 'images/login-graphic.png' pelo caminho
+      correto da imagem que exportaste do Figma.
+    */
+    background-image: url('images/Frame 601.png');
+    background-size: cover;
+    background-position: center;
+}
+
+/* 3. Coluna da Direita (Formulário) */
+.login-form-area {
+    flex-basis: 50%; /* Ocupa os outros 50% */
+    
+    /* Tom 1: O bege mais claro (fundo da página) */
+    background-color: #f7f3eb; 
+    
+    /* Truque para centrar o formulário verticalmente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    padding: 40px; /* Espaçamento de segurança */
+    box-sizing: border-box;
+}
+
+/* 4. O "Invólucro" do Formulário (limita a largura) */
+.form-wrapper {
+    width: 100%;
+    max-width: 400px; /* Define a largura máxima do formulário */
+}
+
+/* 5. Links e Títulos */
+.back-link {
+    color: #555;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.form-wrapper h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+/* 6. A tag <form> */
+.form-wrapper form {
+    display: flex;
+    flex-direction: column; /* Empilha os campos */
+}
+
+/* * ========================================
+ * BLOCO DE FORMULÁRIO (CORRIGIDO)
+ * ========================================
+ */
+
+/* 7. Campos do Formulário (Inputs) */
+.form-wrapper input[type="email"],
+.form-wrapper input[type="password"] {
+    width: 100%;
+    padding: 16px;
+    font-size: 1rem;
+    
+    /* --- Estilos Corrigidos --- */
+    background-color: transparent; /* Fundo transparente */
+    border: 1px solid #0102B5; /* Borda azul (ou roxa) */
+    
+    border-radius: 8px;
+    box-sizing: border-box; 
+    color: #333; /* Cor do texto digitado */
+}
+/* Placeholder (texto cinza) */
+.form-wrapper input[type="email"]::placeholder,
+.form-wrapper input[type="password"]::placeholder {
+    color: #888; 
+}
+/* Efeito de Foco */
+.form-wrapper input[type="email"]:focus,
+.form-wrapper input[type="password"]:focus {
+    outline: none;
+    /* (Opcional) Destaque ao focar */
+    box-shadow: 0 0 5px rgba(0,0,255, 0.3);
+}
+
+/* 8. Checkbox e "Esqueci a Senha" */
+.form-helpers {
+    /* Removemos 'display: flex' para os itens ficarem em bloco */
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+}
+.checkbox-container label {
+    font-weight: 600;
+    color: #555;
+}
+
+/* 9. Link "Esqueci a Senha" */
+.forgot-password {
+    font-weight: bold;
+    color: #333; /* Cor escura */
+    text-decoration: underline; /* Sublinhado */
+    
+    /* Transforma em bloco e adiciona espaço */
+    display: block; 
+    margin-top: 15px; 
+}
+.forgot-password:hover {
+    color: #000; 
+}
+
+/* 10. Botão "Entrar" (Estilo Vazado) */
+.button-outline-login {
+    padding: 14px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    cursor: pointer;
+    
+    /* --- Estilos Corrigidos --- */
+    
+    /* Alinha este botão específico à direita */
+    align-self: flex-end; 
+    
+    /* Cores do botão (para bater com os inputs) */
+    background-color: transparent;
+    border: 2px solid #0102B5; /* Borda azul */
+    color: #0102B5; /* Texto azul */
+    
+    transition: all 0.3s ease;
+    margin-top: 15px;
+}
+.button-outline-login:hover {
+    background-color: #0102B5; /* Fundo azul */
+    color: white; /* Texto branco */
+}
+
+/* 11. Link de Cadastro (lá em baixo) */
+.signup-link {
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: #555;
+}
+.signup-link a {
+    /* --- Estilos Corrigidos --- */
+    color: #333; /* Cor escura */
+    font-weight: bold;
+    text-decoration: underline; /* Sublinhado */
+}
+
+/* 12. Classe de acessibilidade (para esconder labels) */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/*
+ * ========================================
+ * ESTILOS GLOBAIS (Reutilizados do Login)
+ * ========================================
+ */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Sora', sans-serif; 
+}
+
+/*
+ * ========================================
+ * PÁGINA DE LOGIN/CADASTRO (VERSÃO COMPACTA)
+ * ========================================
+ */
+
+/* 1. O Container Principal (Reutilizado) */
+.login-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+/* 2. Coluna da Esquerda (Gráfico) (Reutilizado) */
+.login-graphic {
+    flex-basis: 50%;
+    background-image: url('images/Group 3.png'); /* <-- ATUALIZE ESTE CAMINHO */
+    background-size: cover;
+    background-position: center;
+}
+
+/* 3. Coluna da Direita (Formulário) (Reutilizado) */
+.login-form-area {
+    flex-basis: 50%;
+    background-color: #f7f3eb; /* Fundo bege claro */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Mantém o centrado vertical */
+    padding: 20px; /* Reduzido de 40px */
+    box-sizing: border-box;
+    overflow-y: auto; /* Mantém como segurança, mas não deve aparecer */
+}
+
+/* 4. O "Invólucro" do Formulário (Reutilizado) */
+.form-wrapper {
+    width: 100%;
+    max-width: 400px; 
+}
+
+/* 5. Links e Títulos (Reutilizado) */
+.back-link {
+    color: #555;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* 6. Título H1 (Margem Reduzida) */
+.form-wrapper h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-top: 15px; /* Reduzido de 20px */
+    margin-bottom: 24px; /* Reduzido de 30px */
+}
+
+/*
+ * ========================================
+ * (NOVO) FORMULÁRIO DE CADASTRO (COMPACTO)
+ * ========================================
+ */
+
+/* 7. A tag <form> (Gap Adicionado) */
+.form-wrapper form {
+    display: flex;
+    flex-direction: column; /* Empilha os campos */
+    
+    /* (NOVO) Usamos 'gap' em vez de 'margin-bottom' 
+       no .input-group. É mais limpo e fácil de ajustar.
+    */
+    gap: 12px; /* Espaço de 12px entre cada grupo */
+}
+
+/* 9. Labels Visíveis (Margem Reduzida) */
+.input-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 5px; /* Reduzido de 8px */
+}
+
+/* 10. Campos do Formulário (Padding Reduzido) */
+.form-wrapper input[type="email"],
+.form-wrapper input[type="password"],
+.form-wrapper input[type="text"] {
+    width: 100%;
+    padding: 14px 16px; /* Reduzido de 16px */
+    font-size: 1rem;
+    
+    background-color: transparent; 
+    border: 1px solid #0102B5; 
+    border-radius: 8px;
+    box-sizing: border-box; 
+    color: #333; 
+}
+.form-wrapper input::placeholder {
+    color: #aaa; 
+}
+.form-wrapper input:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0,0,255, 0.3);
+}
+
+/* 11. Checkbox de Termos (Margem Reduzida) */
+.terms-container {
+    display: flex;
+    gap: 10px;
+    /* (REMOVIDO) margin-top: 10px; 
+       O 'gap' do <form> já cria o espaço.
+    */
+}
+.terms-container input[type="checkbox"] {
+    margin-top: 4px; 
+    flex-shrink: 0;
+}
+.terms-container label {
+    font-size: 0.9rem;
+    color: #555;
+    font-weight: normal;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+.terms-container label a {
+    color: #333; 
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* 12. Botão "Cadastrar-se" (Margem Reduzida) */
+.button-outline-login {
+    padding: 14px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    cursor: pointer;
+    
+    background-color: transparent;
+    border: 2px solid #0102B5;
+    color: #0102B5;
+    
+    transition: all 0.3s ease;
+    
+    /* (REMOVIDO) margin-top: 20px; 
+       O 'gap' do <form> já cria o espaço.
+    */
+    align-self: flex-start; 
+}
+.button-outline-login:hover {
+    background-color: #0102B5;
+    color: white;
+}
+
+/* 13. Estilo do Botão Desabilitado (Reutilizado) */
+.button-outline-login:disabled {
+    background-color: transparent;
+    border-color: #ccc; 
+    color: #ccc; 
+    cursor: not-allowed;
+}
