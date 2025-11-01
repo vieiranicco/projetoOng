@@ -126,16 +126,55 @@ O projeto abrange a criação de várias páginas-chave, desde a *landing page* 
 
 ## 📸 Screenshots das Telas
 
-| **Homepage** | **Sobre** |
-| ![Homepage](screenShots\screenshot_homepage.png) | ![Sobre](screenShots\screenshot_sobre.png) |
-| **Blog** | **Post** |
-| ![Blog](screenShots\screenshot_blog.png) | ![Post Blog](screenShots\screenshot_postBlog.png) |
-| **Projetos** | **Projeto-Tech** |
-| ![Projetos](screenShots\screenshot_projetos.png) | ![Projeto-Tech](screenShots\screenshot_projetoTech.png) |
-| **Login** | **Cadastro** |
-| ![Login](screenShots\screenshot_login.png) | ![Cadastro](screenShots\screenshot_cadastro.png) |
-| **Dashboard Voluntario** | **Dashboard Admin** |
-| ![Dashboard Voluntario](screenShots\screenshot_dashboardVoluntario.png) | ![Dashboard Admin](screenShots\screenshot_dashboardAdmin.png) |
+<p align="center">
+  <strong>🏠 Homepage</strong><br>
+  <img src="./screenShots/screenshot_homepage.png" width="400">
+</p>
+
+<p align="center">
+  <strong>ℹ️ Sobre</strong><br>
+  <img src="./screenShots/screenshot_sobre.png" width="400">
+</p>
+
+<p align="center">
+  <strong>📰 Blog</strong><br>
+  <img src="./screenShots/screenshot_blog.png" width="400">
+</p>
+
+<p align="center">
+  <strong>✏️ Post Blog</strong><br>
+  <img src="./screenShots/screenshot_postBlog.png" width="400">
+</p>
+
+<p align="center">
+  <strong>📂 Projetos</strong><br>
+  <img src="./screenShots/screenshot_projetos.png" width="400">
+</p>
+
+<p align="center">
+  <strong>💡 Projeto Tech</strong><br>
+  <img src="./screenShots/screenshot_projetoTech.png" width="400">
+</p>
+
+<p align="center">
+  <strong>🔐 Login</strong><br>
+  <img src="./screenShots/screenshot_login.png" width="400">
+</p>
+
+<p align="center">
+  <strong>🧾 Cadastro</strong><br>
+  <img src="./screenShots/screenshot_cadastro.png" width="400">
+</p>
+
+<p align="center">
+  <strong>🤝 Dashboard Voluntário</strong><br>
+  <img src="./screenShots/screenshot_dashboardVoluntario.png" width="400">
+</p>
+
+<p align="center">
+  <strong>🧭 Dashboard Admin</strong><br>
+  <img src="./screenShots/screenshot_dashboardAdmin.png" width="400">
+</p>
 
 ---
 
